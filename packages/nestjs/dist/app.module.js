@@ -22,11 +22,11 @@ AppModule = __decorate([
             }),
             typeorm_1.TypeOrmModule.forRoot({
                 type: 'mysql',
-                host: 'localhost',
-                port: 3306,
-                username: 'root',
-                password: '1Qazwsxedc!',
-                database: 'data',
+                host: process.env.NEST_DB_HOST,
+                port: parseInt(process.env.NEST_DB_PORT),
+                username: process.env.NEST_DB_USERNAME,
+                password: process.env.NEST_DB_PASSWORD,
+                database: process.env.NEST_DB_NAME,
                 entities: typeorm_2.default,
                 synchronize: true
             }),
